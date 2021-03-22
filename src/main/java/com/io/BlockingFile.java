@@ -1,5 +1,7 @@
 package com.io;
 
+import com.UrlToBase64Service;
+
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.*;
@@ -7,9 +9,10 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.Date;
 
-public class BlockingFile {
-    public static String urlToBase64Sting(String urlOrPath) {
+public class BlockingFile implements UrlToBase64Service {
 
+    @Override
+    public String urlToBase64Sting(String urlOrPath) {
         byte[] imgBytes = new byte[1024 * 1024];
 
         ByteArrayOutputStream out = new ByteArrayOutputStream();

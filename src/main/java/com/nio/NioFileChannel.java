@@ -1,6 +1,7 @@
 package com.nio;
 
 import cn.hutool.core.io.IoUtil;
+import com.UrlToBase64Service;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -11,8 +12,11 @@ import java.nio.channels.ReadableByteChannel;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class NioFileChannel {
-    public static String urlToBase64Sting(String url) {
+public class NioFileChannel implements UrlToBase64Service {
+
+    @Override
+    public String urlToBase64Sting(String url) {
+
         ReadableByteChannel readableByteChannel = null;
         FileOutputStream fileOutputStream = null;
         File file;
